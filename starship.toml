@@ -1,0 +1,100 @@
+format = """
+[░▒▓](bg:transparent fg:#2e2a20)\
+[ $os ](bg:#2e2a20 fg:#8aab6e)\
+[▓▒░](bg:#3d3828 fg:#2e2a20)\
+[ $directory ](bg:#3d3828 fg:#c8b49a)\
+[▓▒░](bg:#242018 fg:#3d3828)\
+$git_branch\
+$git_status\
+[▓▒░](bg:transparent fg:#242018)\
+$fill\
+$battery\
+$nodejs\
+$python\
+$swift\
+$cmd_duration\
+[ $time ](bg:#2e2a20 fg:#8aab6e)\
+[▓▒▓](bg:transparent fg:#2e2a20)\
+$line_break\
+$status\
+[❯](fg:#8aab6e bold) """
+
+[os]
+disabled = false
+style = "bg:#2e2a20 fg:#8aab6e"
+
+[os.symbols]
+Macos = "󰀵"
+
+[directory]
+style = "bg:#3d3828 fg:#c8b49a"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = " 󰌾"
+
+[git_branch]
+symbol = ""
+style = "bg:#242018 fg:#8aab6e"
+format = "[▓▒░](bg:#242018 fg:#3d3828)[ $symbol $branch ]($style)"
+
+[git_status]
+style = "bg:#242018 fg:#d4956a"
+format = "[ $all_status$ahead_behind ]($style)"
+conflicted = "󰩌 "
+ahead = "󰶣 "
+behind = "󰶡 "
+diverged = "󰩌 "
+untracked = "󰋗 "
+stashed = "󰏗 "
+modified = "󰝶 "
+staged = "󰐗 "
+deleted = "󰍶 "
+
+[fill]
+symbol = " "
+
+[battery]
+format = "[ $symbol$percentage ]($style) "
+[[battery.display]]
+threshold = 20
+style = "fg:#d4956a"
+[[battery.display]]
+threshold = 50
+style = "fg:#c8b49a"
+[[battery.display]]
+threshold = 100
+style = "fg:#8aab6e"
+
+[status]
+disabled = false
+symbol = "✗ "
+success_symbol = ""
+format = "[$symbol$status ]($style)"
+style = "fg:#d4956a bold"
+
+[time]
+disabled = false
+time_format = "%H:%M"
+style = "bg:#2e2a20 fg:#8aab6e"
+format = "[ 󰥔 $time ]($style)"
+
+[cmd_duration]
+min_time = 2_000
+style = "fg:#c8b49a"
+format = "[ 󱦟 $duration ]($style) "
+
+[nodejs]
+symbol = "󰎙"
+style = "fg:#8aab6e"
+format = "[ $symbol $version ]($style) "
+
+[python]
+symbol = "󰌠"
+style = "fg:#8aab6e"
+format = "[ $symbol $version ]($style) "
+
+[swift]
+symbol = "󰛥"
+style = "fg:#8aab6e"
+format = "[ $symbol $version ]($style) "
