@@ -102,8 +102,8 @@ brew install --cask font-jetbrains-mono-nerd-font
 
 Clone the repo:
 ```bash
-git clone https://github.com/rgabrex/dotfiles ~/Documents/GitHub/dotfiles
-cd ~/Documents/GitHub/dotfiles
+git clone https://github.com/rgabrex/MacOs-cozy-rice ~/Documents/GitHub/MacOs-cozy-rice
+cd ~/Documents/GitHub/MacOs-cozy-rice
 ```
 
 Copy configs to the right places:
