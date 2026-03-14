@@ -1,13 +1,24 @@
 export const refreshFrequency = 1000
 
+export const command = "date '+%H|%M|%A|%d|%b'"
+
 export const className = `
   position: fixed;
-  top: 80px;
+  top: 150px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   z-index: 10;
   font-family: 'Monaspace Krypton', monospace;
+
+  .container {
+    background: rgba(26, 22, 18, 0.65);
+    border: 1px solid #3d3828;
+    border-radius: 12px;
+    padding: 16px 20px;
+    backdrop-filter: blur(10px);
+    width: 220px;
+  }
 
   .time {
     font-size: 72px;
@@ -28,21 +39,12 @@ export const className = `
   }
 `
 
-const pad = n => String(n).padStart(2, '0')
-
-const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
-const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
-
-export const render = () => {
-  const now = new Date()
-  const h = pad(now.getHours())
-  const m = pad(now.getMinutes())
-  const day = days[now.getDay()]
-  const date = now.getDate()
-  const month = months[now.getMonth()]
+export const render = ({ output }) => {
+  if (!output) return null
+  const [h, m, day, date, month] = output.trim().split('|')
 
   return (
-    <div>
+    <div className="container">
       <div className="time">{h}:{m}</div>
       <div className="date">{day} · {date} {month}</div>
     </div>

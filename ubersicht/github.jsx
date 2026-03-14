@@ -2,21 +2,25 @@ export const refreshFrequency = 3600000 // aggiorna ogni ora
 
 export const className = `
   position: fixed;
-  bottom: 40px;
-  left: 160px;
+  bottom: 60px;
+  left: 360px;  
+  right: 420px;
   z-index: 10;
   font-family: 'Monaspace Krypton', monospace;
 
   .container {
-    background: rgba(26, 22, 18, 0.75);
+    background: rgba(26, 22, 18, 0.65);
     border: 1px solid #3d3828;
     border-radius: 12px;
     padding: 16px 20px;
     backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .title {
-    font-size: 11px;
+    font-size: 20px;
     color: #8aab6e;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -28,18 +32,20 @@ export const className = `
 
   .grid {
     display: flex;
-    gap: 3px;
+    justify-content: space-between;
+    gap: 4px;
+    width: 100%;
   }
 
   .week {
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 4px;
   }
 
   .day {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 2px;
     background: #2e2a20;
   }
@@ -78,7 +84,6 @@ export const render = ({ output, error }) => {
   const contributions = data.contributions || []
   const total = data.total?.lastYear || 0
 
-  // Raggruppa per settimane (ultime 26 settimane)
   const weeks = []
   const last182 = contributions.slice(-182)
   for (let i = 0; i < last182.length; i += 7) {

@@ -2,19 +2,19 @@ export const refreshFrequency = 5000
 
 export const className = `
   position: fixed;
-  bottom: 40px;
-  right: 160px;
+  top: 430px;
+  right: 420px;
   z-index: 10;
   font-family: 'Monaspace Krypton', monospace;
 
   .container {
-    background: rgba(26, 22, 18, 0.75);
+    background: rgba(26, 22, 18, 0.65);
     border: 1px solid #3d3828;
     border-radius: 12px;
     padding: 14px 18px;
     backdrop-filter: blur(10px);
-    max-width: 260px;
-    min-width: 220px;
+    max-width: 205px;
+    min-width: 205px;
   }
 
   .title {

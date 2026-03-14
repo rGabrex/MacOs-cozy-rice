@@ -2,22 +2,22 @@ export const refreshFrequency = 60000
 
 export const className = `
   position: fixed;
-  bottom: 180px;
-  right: 160px;
+  bottom: 300px;
+  left: 360px;
   z-index: 10;
   font-family: 'Monaspace Krypton', monospace;
 
   .container {
-    background: rgba(26, 22, 18, 0.75);
+    background: rgba(26, 22, 18, 0.65);
     border: 1px solid #3d3828;
     border-radius: 12px;
     padding: 16px 20px;
     backdrop-filter: blur(10px);
-    width: 220px;
+    width: 260px;
   }
 
   .title {
-    font-size: 10px;
+    font-size: 20px;
     color: #8aab6e;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -27,7 +27,7 @@ export const className = `
   }
 
   .month {
-    color: #c8b49a;
+    color: #e8dcc8;
   }
 
   .grid {
@@ -38,7 +38,7 @@ export const className = `
 
   .header {
     font-size: 9px;
-    color: #6b6355;
+    color: #b5c9a1;
     text-align: center;
     padding: 2px 0;
     text-transform: uppercase;
@@ -46,7 +46,7 @@ export const className = `
 
   .day {
     font-size: 10px;
-    color: #c8b49a;
+    color: #e8dcc8;
     text-align: center;
     padding: 3px 0;
     border-radius: 4px;
@@ -64,7 +64,7 @@ export const className = `
   }
 
   .day.weekend {
-    color: #6b6355;
+    color: #c8b49a;
   }
 
   .day.has-lesson {
